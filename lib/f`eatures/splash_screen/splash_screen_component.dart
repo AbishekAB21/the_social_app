@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:the_social_app/core/constants/app_assets.dart';
 import 'package:the_social_app/core/constants/app_strings.dart';
 
 class SplashScreenComponent extends StatelessWidget {
@@ -8,12 +9,15 @@ class SplashScreenComponent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-      body: Center(
-        child: Text(
-          AppStrings.appName,
-          style: Theme.of(context).textTheme.bodyMedium,
-        ),
-      ),
+      body: Stack(
+        children: [
+          Container(
+            height: double.infinity,
+            child: Image.asset(AppAssets.splashBackground, fit: BoxFit.cover,)),
+          
+          Image.asset(AppAssets.appLogo, width: 350, height: 400,),
+        ],
+      )
     );
   }
 }
