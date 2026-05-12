@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:the_social_app/utils/theme/app_colors.dart';
+import 'package:the_social_app/utils/theme/app_theme_extension.dart';
 import 'package:the_social_app/utils/typography/app_typography.dart';
-
 
 class AppTheme {
   // =========================
@@ -18,6 +18,19 @@ class AppTheme {
     colorScheme: const ColorScheme.dark(
       primary: AppColors.primary,
     ),
+
+    // =========================
+    // CUSTOM THEME EXTENSIONS
+    // =========================
+
+    extensions: const [
+
+      AppThemeExtension(
+        glassBackground: Color(0x1AFFFFFF),
+        glassBorder: Color(0x33FFFFFF),
+      ),
+
+    ],
 
     appBarTheme: const AppBarTheme(
       backgroundColor: AppColors.darkBackground,
@@ -55,6 +68,19 @@ class AppTheme {
       primary: AppColors.primary,
     ),
 
+    // =========================
+    // CUSTOM THEME EXTENSIONS
+    // =========================
+
+    extensions: const [
+
+      AppThemeExtension(
+        glassBackground: Color(0x66FFFFFF),
+        glassBorder: Color(0x1A000000),
+      ),
+
+    ],
+
     appBarTheme: const AppBarTheme(
       backgroundColor: AppColors.lightBackground,
       elevation: 0,
@@ -74,3 +100,7 @@ class AppTheme {
     ),
   );
 }
+
+// -------!!!!!!--------
+// For normal colors : color: Theme.of(context).primaryColor
+// For custom colors : Theme.of(context).extension<AppThemeExtension>()!.glassBackground

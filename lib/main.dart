@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:the_social_app/f%60eatures/splash_screen/spalsh_screen_container.dart';
+import 'package:the_social_app/routes/app_routes.dart';
 import 'package:the_social_app/utils/theme/app_theme.dart';
 import 'package:the_social_app/utils/theme/theme_cubit.dart';
 import 'package:the_social_app/utils/theme/theme_state.dart';
@@ -19,7 +20,8 @@ class MyApp extends StatelessWidget {
       create: (context) => ThemeCubit(),
       child: BlocBuilder<ThemeCubit, AppThemeMode>(
         builder: (context, themeMode) {
-          return MaterialApp(
+          return MaterialApp.router(
+            routerConfig: AppRouter.router,
             debugShowCheckedModeBanner: false,
 
             theme: AppTheme.lightTheme,
@@ -28,7 +30,6 @@ class MyApp extends StatelessWidget {
             themeMode: themeMode == AppThemeMode.dark
                 ? ThemeMode.dark
                 : ThemeMode.light,
-            home: const SpalshScreenContainer(),
           );
         },
       ),

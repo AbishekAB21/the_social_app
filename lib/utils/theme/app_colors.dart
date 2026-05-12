@@ -45,11 +45,15 @@ class AppColors {
 
   static const subtitleLight = Color(0xFF666666);
 
+
   // =========================
   // BORDER / GLASS COLORS
   // =========================
 
+  static const glassBackground = Color(0x1AFFFFFF);
+
   static const glassBorder = Color(0x33FFFFFF);
 
   static const dividerDark = Color(0xFF323232);
-}
+  
+  }

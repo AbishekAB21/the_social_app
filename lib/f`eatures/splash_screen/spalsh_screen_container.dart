@@ -4,7 +4,6 @@ import 'package:the_social_app/f%60eatures/splash_screen/splash_screen_component
 class SpalshScreenContainer extends StatelessWidget {
   const SpalshScreenContainer({super.key});
 
-  @override
   Widget build(BuildContext context) {
     return SplashScreenComponent();
   }

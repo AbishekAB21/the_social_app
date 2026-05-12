@@ -1,11 +1,10 @@
-import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:the_social_app/f%60eatures/auth_screens/login/login_screen_container.dart';
 import 'package:the_social_app/routes/app_route_paths.dart';
-
-import 'app_routes.dart';
 
 // Screens
 import 'package:the_social_app/f%60eatures/splash_screen/spalsh_screen_container.dart';
+import 'package:the_social_app/f%60eatures/onboarding_screens/onboarding_screen_container.dart';
 
 class AppRouter {
   static final GoRouter router = GoRouter(
@@ -17,15 +16,15 @@ class AppRouter {
         builder: (context, state) => const SpalshScreenContainer(),
       ),
 
-    //   GoRoute(
-    //     path: AppRoutesPaths.onboarding,
-    //     builder: (context, state) => const OnboardingScreen(),
-    //   ),
+      GoRoute(
+        path: AppRoutesPaths.onboarding,
+        builder: (context, state) => const OnboardingScreenContainer(),
+      ),
 
-    //   GoRoute(
-    //     path: AppRoutesPaths.login,
-    //     builder: (context, state) => const LoginScreen(),
-    //   ),
+      GoRoute(
+        path: AppRoutesPaths.login,
+        builder: (context, state) => const LoginScreenContainer(),
+      ),
 
     //   GoRoute(
     //     path: AppRoutesPaths.signup,
